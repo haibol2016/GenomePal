@@ -25,8 +25,8 @@ dest_dir <- tempdir()
 
 # For a real example, download C. elegans genome fasta sequences from Ensembl
 # url <- paste0("https://ftp.ensembl.org/pub/release-112/fasta/",
-                "caenorhabditis_elegans/dna/Caenorhabditis_elegans.",
-                "WBcel235.dna.toplevel.fa.gz")
+#                "caenorhabditis_elegans/dna/Caenorhabditis_elegans.",
+#                "WBcel235.dna.toplevel.fa.gz")
 # options(timeout = max(3000, getOption("timeout")))                
 # genome_fasta <- file.path(dest_dir, "WBcel235.dna.toplevel.fa.gz")
 # download.file(url, destile = genome_fasta),
