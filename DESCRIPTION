@@ -1,0 +1,33 @@
+Package: GenomePal
+Title: Create Genome Annotation
+Version: 0.0.0.9000
+Authors@R: 
+    person("Haibo", "Liu", , "haibo.liu@umassmed.edu", 
+           role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0002-4213-2883"))
+Description: Create a BSgenome package from the genome sequences in a fasta
+             file, and create OrgDb, geneAnnotation, and genomeAnnotation
+             objects from a BSgenome, EnsDb, and GTF, which can be used for
+             customized ArchR-based analyses.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2
+Depends: R (>= 4.4.0)
+Suggests: 
+    BSgenome.Hsapiens.UCSC.hg38,
+    testthat (>= 3.0.0),
+    txdbmaker
+Config/testthat/edition: 3
+Imports: 
+    AnnotationForge,
+    BSgenomeForge,
+    collections,
+    GenomeInfoDb,
+    GenomicFeatures,
+    GenomicRanges,
+    magrittr,
+    methods,
+    plyranges,
+    S4Vectors,
+    utils
