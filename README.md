@@ -18,7 +18,8 @@ library(devtools)
 devtools::install_github("haibol2016/GenomePal")
 ```
 
-## Example 1: how to generate a BSgenome package
+## Example 1 
+Generate a BSgenome package from a multifasta file.
 ```r
 dest_dir <- tempdir()
 
@@ -57,8 +58,8 @@ make_BSgenome_pkg(
 )
 ```
 
-## Example 2: extract gene IDs and symbol from an Ensembl GTF file and 
-create a OrgDb
+## Example 2  
+Extract gene IDs and symbol from an Ensembl GTF file and create a OrgDb package.
 
 ```r
 gtf <- system.file("extdata", "example.gtf.gz",
@@ -79,8 +80,7 @@ try(OrgDb <- create_OrgDb(geneID_symbol,
 
 ## Example 3
 This is a basic example which shows you how to create geneAnnotation and 
-genomeAnnotation for ArchR-based scATAC-seq data analysis using a 
-custom genome.
+genomeAnnotation for ArchR-based scATAC-seq data analysis using a custom genome.
 
 ``` r
 library("txdbmaker")
@@ -97,7 +97,7 @@ TxDb <- makeTxDbFromGFF(file = gtf,
                         organism = "Homo sapiens",
                         taxonomyId = 9606,
                         circ_seqs = "MT")
-#'
+                        
 ## Or using seqinfo of aBSgenome
 # library("BSgenome.Hsapiens.UCSC.hg38")
 # seqlevelsStyle(BSgenome.Hsapiens.UCSC.hg38) <- "Ensembl"
@@ -111,7 +111,6 @@ TxDb <- makeTxDbFromGFF(file = gtf,
 geneAnno <- create_geneAnnotation(TxDb = TxDb,
                                   geneID_symbol = geneID_symbol,
                                   filterChr = "MT")
-#'
 seqlevelsStyle(BSgenome.Hsapiens.UCSC.hg38) <- "ENSEMBL"
 genomeAnno <- create_genomeAnnotation(BSgenome = BSgenome.Hsapiens.UCSC.hg38,
                                       geneAnnotation = geneAnno,
