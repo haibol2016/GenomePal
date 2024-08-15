@@ -34,32 +34,31 @@
 #' @importFrom BSgenomeForge forgeBSgenomeDataPkg
 #'
 #' @examples
-#' if (TRUE) {
-#'     dest_dir <- tempdir()
-#'     genome_fasta <- file.path(dest_dir, "toy.example.fa")
-#'     in_fasta <- file(genome_fasta, open = "w")
-#'     writeLines(c(">chr1\nATCGCTGCGGATGCGG",
-#'               ">chr2\nCCCCCCCCCCCGGAAA",
-#'               ">chrM\nATACTACTGGA"), in_fasta)
-#'     close(in_fasta)
+#'dest_dir <- tempdir()
+#'genome_fasta <- file.path(dest_dir, "toy.example.fa")
+#'in_fasta <- file(genome_fasta, open = "w")
+#'writeLines(c(">chr1\nATCGCTGCGGATGCGG",
+#'          ">chr2\nCCCCCCCCCCCGGAAA",
+#'          ">chrM\nATACTACTGGA"), in_fasta)
+#'close(in_fasta)
 #'
-#'     make_BSgenome_pkg(
-#'         genome_fasta = genome_fasta,
-#'         dest_dir = file.path(dest_dir, "multifasta"),
-#'         prefix = "none",
-#'         latin_name = "Homo sapiens",
-#'         common_name = "Human",
-#'         genome_version = "GRCh38",
-#'         seed_file_name = file.path(
-#'             dest_dir,
-#'             "human.genome.seed.txt"
-#'         ),
-#'         fasta_url = "http://ftp.ensembl.org/xxx.fa",
-#'         release_date = "August 2007",
-#'         source = "Ensembl",
-#'         version = "1.0.0"
-#'     )
-#' }
+#'make_BSgenome_pkg(
+#'    genome_fasta = genome_fasta,
+#'    dest_dir = file.path(dest_dir, "multifasta"),
+#'    prefix = "none",
+#'    latin_name = "Homo sapiens",
+#'    common_name = "Human",
+#'    genome_version = "GRCh38",
+#'    seed_file_name = file.path(
+#'        dest_dir,
+#'        "human.genome.seed.txt"
+#'    ),
+#'    fasta_url = "http://ftp.ensembl.org/xxx.fa",
+#'    release_date = "August 2007",
+#'    source = "Ensembl",
+#'    version = "1.0.0"
+#')
+
 make_BSgenome_pkg <-
     function(
         genome_fasta = NULL,
@@ -127,14 +126,14 @@ make_BSgenome_pkg <-
 #' genome_fasta <- file.path(dest_dir, "toy.example.fa")
 #' in_fasta <- file(genome_fasta, open = "w")
 #' writeLines(c(">chr1\nATCGCTGCGGATGCGG",
-#'               ">chr2\nCCCCCCCCCCCGGAAA",
-#'               ">chrM\nATACTACTGGA"), in_fasta)
+#'          ">chr2\nCCCCCCCCCCCGGAAA",
+#'          ">chrM\nATACTACTGGA"), in_fasta)
 #' close(in_fasta)
 #'
 #' fa_dir <- generate_multifasta(
-#'     genome_fasta = genome_fasta,
-#'     dest_dir = dest_dir,
-#'     prefix = "none"
+#'genome_fasta = genome_fasta,
+#'dest_dir = dest_dir,
+#'prefix = "none"
 #' )
 #'
 generate_multifasta <- function(genome_fasta = NULL,
@@ -248,29 +247,29 @@ generate_multifasta <- function(genome_fasta = NULL,
 #' genome_fasta <- file.path(dest_dir, "toy.example.fa")
 #' in_fasta <- file(genome_fasta, open = "w")
 #' writeLines(c(">chr1\nATCGCTGCGGATGCGG",
-#'              ">chr2\nCCCCCCCCCCCGGAAA",
-#'              ">chrM\nATACTACTGGA"), in_fasta)
+#'         ">chr2\nCCCCCCCCCCCGGAAA",
+#'         ">chrM\nATACTACTGGA"), in_fasta)
 #' close(in_fasta)
 #'
 #' fa_dir <- generate_multifasta(
-#'     genome_fasta = genome_fasta,
-#'     dest_dir = dest_dir,
-#'     prefix = "none"
+#'genome_fasta = genome_fasta,
+#'dest_dir = dest_dir,
+#'prefix = "none"
 #' )
 #'
 #' seed_file <- generate_seed_file(
-#'     multifasta_path = fa_dir,
-#'     latin_name = "Homo sapiens",
-#'     common_name = "Human",
-#'     genome_version = "GRCh38",
-#'     seed_file_name = file.path(
-#'         dest_dir,
-#'         "human.genome.seed.txt"
-#'     ),
-#'     fasta_url = "http://ftp.ensembl.org/xxx.fa",
-#'     release_date = "August 2007",
-#'     source = "Ensembl",
-#'     version = "1.0.0"
+#'multifasta_path = fa_dir,
+#'latin_name = "Homo sapiens",
+#'common_name = "Human",
+#'genome_version = "GRCh38",
+#'seed_file_name = file.path(
+#'    dest_dir,
+#'    "human.genome.seed.txt"
+#'),
+#'fasta_url = "http://ftp.ensembl.org/xxx.fa",
+#'release_date = "August 2007",
+#'source = "Ensembl",
+#'version = "1.0.0"
 #' )
 generate_seed_file <-
     function(
@@ -376,36 +375,36 @@ generate_seed_file <-
 #'
 #' @examples
 #' if (TRUE) {
-#'     dest_dir <- tempdir()
-#'     genome_fasta <- file.path(dest_dir, "toy.example.fa")
-#'     in_fasta <- file(genome_fasta, open = "w")
+#'dest_dir <- tempdir()
+#'genome_fasta <- file.path(dest_dir, "toy.example.fa")
+#'in_fasta <- file(genome_fasta, open = "w")
 #' writeLines(c(">chr1\nATCGCTGCGGATGCGG",
-#'               ">chr2\nCCCCCCCCCCCGGAAA",
-#'               ">chrM\nATACTACTGGA"), in_fasta)
-#'     close(in_fasta)
+#'          ">chr2\nCCCCCCCCCCCGGAAA",
+#'          ">chrM\nATACTACTGGA"), in_fasta)
+#'close(in_fasta)
 #'
-#'     fa_dir <- generate_multifasta(
-#'         genome_fasta = genome_fasta,
-#'         dest_dir = dest_dir,
-#'         prefix = "none"
-#'     )
+#'fa_dir <- generate_multifasta(
+#'    genome_fasta = genome_fasta,
+#'    dest_dir = dest_dir,
+#'    prefix = "none"
+#')
 #'
-#'     seed_file <- generate_seed_file(
-#'         multifasta_path = fa_dir,
-#'         latin_name = "Homo sapiens",
-#'         common_name = "Human",
-#'         genome_version = "GRCh38",
-#'         seed_file_name = file.path(
-#'             dest_dir,
-#'             "human.genome.seed.txt"
-#'         ),
-#'         fasta_url = "http://ftp.ensembl.org/xxx.fa",
-#'         release_date = "August 2007",
-#'         source = "Ensembl",
-#'         version = "1.0.0"
-#'     )
+#'seed_file <- generate_seed_file(
+#'    multifasta_path = fa_dir,
+#'    latin_name = "Homo sapiens",
+#'    common_name = "Human",
+#'    genome_version = "GRCh38",
+#'    seed_file_name = file.path(
+#'        dest_dir,
+#'        "human.genome.seed.txt"
+#'    ),
+#'    fasta_url = "http://ftp.ensembl.org/xxx.fa",
+#'    release_date = "August 2007",
+#'    source = "Ensembl",
+#'    version = "1.0.0"
+#')
 #'
-#'     forge_BSgenome(seed_file[2], dest_dir = dest_dir)
+#'forge_BSgenome(seed_file[2], dest_dir = dest_dir)
 #' }
 forge_BSgenome <-
     function(

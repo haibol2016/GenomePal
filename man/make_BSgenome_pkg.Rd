@@ -62,30 +62,28 @@ Starting with a multi-fasta file for a reference genome, a BSgenome package
 is created and installed.
 }
 \examples{
-if (TRUE) {
-    dest_dir <- tempdir()
-    genome_fasta <- file.path(dest_dir, "toy.example.fa")
-    in_fasta <- file(genome_fasta, open = "w")
-    writeLines(c(">chr1\nATCGCTGCGGATGCGG",
-              ">chr2\nCCCCCCCCCCCGGAAA",
-              ">chrM\nATACTACTGGA"), in_fasta)
-    close(in_fasta)
+dest_dir <- tempdir()
+genome_fasta <- file.path(dest_dir, "toy.example.fa")
+in_fasta <- file(genome_fasta, open = "w")
+writeLines(c(">chr1\nATCGCTGCGGATGCGG",
+         ">chr2\nCCCCCCCCCCCGGAAA",
+         ">chrM\nATACTACTGGA"), in_fasta)
+close(in_fasta)
 
-    make_BSgenome_pkg(
-        genome_fasta = genome_fasta,
-        dest_dir = file.path(dest_dir, "multifasta"),
-        prefix = "none",
-        latin_name = "Homo sapiens",
-        common_name = "Human",
-        genome_version = "GRCh38",
-        seed_file_name = file.path(
-            dest_dir,
-            "human.genome.seed.txt"
-        ),
-        fasta_url = "http://ftp.ensembl.org/xxx.fa",
-        release_date = "August 2007",
-        source = "Ensembl",
-        version = "1.0.0"
-    )
-}
+make_BSgenome_pkg(
+   genome_fasta = genome_fasta,
+   dest_dir = file.path(dest_dir, "multifasta"),
+   prefix = "none",
+   latin_name = "Homo sapiens",
+   common_name = "Human",
+   genome_version = "GRCh38",
+   seed_file_name = file.path(
+       dest_dir,
+       "human.genome.seed.txt"
+   ),
+   fasta_url = "http://ftp.ensembl.org/xxx.fa",
+   release_date = "August 2007",
+   source = "Ensembl",
+   version = "1.0.0"
+)
 }
