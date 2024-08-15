@@ -29,8 +29,7 @@ dest_dir <- tempdir()
 #                "WBcel235.dna.toplevel.fa.gz")
 # options(timeout = max(3000, getOption("timeout")))                
 # genome_fasta <- file.path(dest_dir, "WBcel235.dna.toplevel.fa.gz")
-# download.file(url, destile = genome_fasta),
-                mode = "wb")
+# download.file(url, destfile = genome_fasta, mode = "wb")
 
 # For a toy example                
 genome_fasta <- file.path(dest_dir, "toy.example.fa")
